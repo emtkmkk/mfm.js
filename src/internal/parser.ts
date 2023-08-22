@@ -631,7 +631,7 @@ export const language = P.createLanguage({
 		const parser = P.seq([
 			P.alt([P.lineBegin, side]),
 			mark,
-			P.regexp(/[a-z0-9_+-]+/i),
+			P.regexp(/[a-z0-9_+-]+(@[a-z0-9_+-.]+)?/i),
 			mark,
 			P.alt([P.lineEnd, side]),
 		], 2);
