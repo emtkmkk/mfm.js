@@ -628,7 +628,7 @@ export const language = P.createLanguage({
 		return P.seq([
 			P.alt([P.lineBegin, side]),
 			mark,
-			P.regexp(/[a-z0-9_+-]+/i),
+			P.regexp(/[a-z0-9_+-]+(@[a-z0-9_+-.]+)?/i),
 			mark,
 			P.alt([P.lineEnd, side]),
 		], 2).map(name => M.EMOJI_CODE(name as string));
